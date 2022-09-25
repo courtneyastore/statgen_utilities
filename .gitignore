@@ -1,1 +1,8 @@
 genetic_correlations/ldsc
+genetic_correlations/open_gwas_file.tsv
+genetic_correlations/munge_input.lst
+genetic_correlations/genetic_correlation_input.lst
+genetic_correlations/new_open_gwas_sumstats
+genetic_correlations/format_open_gwas_sumstats
+genetic_correlations/open_gwas_munged_sumstats
+genetic_correlations/genetic_correlation_pairwise
