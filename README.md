@@ -4,6 +4,17 @@ This repository contains various utilities for analyzing genetic/genomic data. E
 1. annotate_variants/annotate_pathogenic_variants_annovar.py
 2. global_pathway_analysis/global_pathway_analysis.py
 3. predict_variant_pair_frequency/predict_variant_pair_frequency_HardyWeinberg.py
+4. genetic_correlations/download_individual_gwas_sumstats_open_gwas.py
+5. genetic_correlations/format_opengwas_vcf.py
+6. genetic_correlations/create_mungesumstats_input_file.py
+7. genetic_correlations/get_pairs.py
+
+### R script
+1. genetic_correlations/download_open_gwas_file.R
+
+### Bash scripts
+1. genetic_correlations/ldsc_munge_sumstats_batch.sh
+2. genetic_correlations/ldsc_genetic_correlation_batch.sh
 
 ## Variant annotation
 ### Requirements
