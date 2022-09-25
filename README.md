@@ -73,3 +73,13 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 
 ### Outputs
 * /statgen_utilities/predict_variant_pair_frequency/predicted_variant_pair_frequency_NOD2_chr16_clinvar_dbnsfp_gnomad_merged.tsv file will be created. This file contains the variant pair frequency for Non-Finish European (nfe) and African (afr) GNOMAD cohorts.
+
+## Genetic correlation analysis
+### Requirements
+* Data acquisition 
+	* Python 3.7
+	* Pandas: Installation instructions can be found here: https://pypi.org/project/pandas/
+* Running genetic correlation
+	* Python 2
+	* LDSC tool: Installation instructions can be found here: https://github.com/bulik/ldsc
+
