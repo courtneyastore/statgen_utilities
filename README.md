@@ -46,9 +46,11 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```sh
   python3 global_pathway_analysis.py -f pathway_analysis_input.txt
 ```
-## Outputs
-* significant_pathways_pathway_analysis_input.txt file will be created. This file contains only the pathways with p-value < 0.05.
+### Outputs
+* /global_pathway_analysis/significant_pathways_pathway_analysis_input.txt file will be created. This file contains only the pathways with p-value < 0.05.
 
 ## Predicting variant pair frequencies
 ### Requirements
-* 
+* Python 3.7
+* Pandas: Installation instructions can be found here: https://pypi.org/project/pandas/
+* Numpy: Installation instructions can be found here: https://numpy.org/install/
