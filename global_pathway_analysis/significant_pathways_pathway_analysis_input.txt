@@ -1,0 +1,7 @@
+Pathway identifier	Pathway name	#Entities found	#Entities total	Entities ratio	Entities pValue
+R-HSA-168643	Nucleotide-binding domain, leucine rich repeat containing receptor (NLR) signaling pathways	4	72	0.004742145820983995	0.0021595423426644
+R-HSA-9020933	Interleukin-23 signaling	2	11	7.244945004281104E-4	0.0031486547238834
+R-HSA-168638	NOD1/2 Signaling Pathway	3	41	0.002700388592504775	0.0036950669562828
+R-HSA-6783783	Interleukin-10 signaling	4	86	0.005664229730619772	0.0040612010132715
+R-HSA-9705462	Inactivation of CSF3 (G-CSF) signaling	2	27	0.0017783046828689982	0.0175616375948851
+R-HSA-9674555	Signaling by CSF3 (G-CSF)	2	35	0.002305209774089442	0.0284014036118579
