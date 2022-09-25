@@ -7,7 +7,7 @@ Please download ANNOVAR. Documentation for ANNOVAR can be found here: https://an
 Use convert2annovar to generate .avinput files from a multi-sample VCF.
 
 
-Usage information: python3 annotate_pathogenic_variants_annovar.py -a <annovar directory> -v 
+Usage information: python3 annotate_pathogenic_variants_annovar.py -a <annovar directory> -v <path to *.avinput files generated from convert2annovar>
 
 '''
 
