@@ -7,19 +7,23 @@ This repository contains various utilities for analyzing genetic/genomic data. E
 * ANNOVAR: a tool for functional annotation of variants. Can be downloaded by filling out this form: https://www.openbioinformatics.org/annovar/annovar_download_form.php 
 
 ### Steps
-1. Run conver2annovar.pl to create annovar-formatted files for variant annotation.
+1. Navigate to annotate_variants directory
+```sh
+  cd annotate_variants
+```
+2. Run conver2annovar.pl to create annovar-formatted files for variant annotation.
 ```sh
 perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile output_annovar
 ```
-2. Create output directory.
+3. Create output directory.
  ```sh
   mkdir avinput_output
   ```
-3. Move avinput files to avinput_output.
+4. Move avinput files to avinput_output.
 ```sh
   mv *.avinput avinput_output/
 ```
-4. Annotate variants for each sample.
+5. Annotate variants for each sample.
 ```sh
   python3 annotate_pathogenic_variants_annovar.py -a <annovar directory> -v avinput_output
 ```
@@ -33,8 +37,12 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 * reactome2py: Installation instructions can be found here: https://github.com/reactome/reactome2py
 
 ### Steps
-* Generate an input list of proteins (Gene Symbols). One Gene Symbol per line. An example input file was created: /global_pathway_analysis/pathway_analysis_input.txt
-* Run Reactome Global Pathway Analysis via Reactome content and analysis services API using your input set of proteins.
+1. Navigate to global_pathway_analysis directory
+```sh
+  cd global_pathway_analysis
+```
+2. Generate an input list of proteins (Gene Symbols). One Gene Symbol per line. An example input file was created: /global_pathway_analysis/pathway_analysis_input.txt
+3. Run Reactome Global Pathway Analysis via Reactome content and analysis services API using your input set of proteins.
 ```sh
   python3 global_pathway_analysis.py -f pathway_analysis_input.txt
 ```
