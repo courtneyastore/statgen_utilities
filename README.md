@@ -1,5 +1,5 @@
 # Statistical genetics and Bioinformatics resources
-Utilities for analyzing genetic/genomic data.
+This repository contains various utilities for analyzing genetic/genomic data. Each utility is a component of larger pipelines.
 ## Variant annotation
 ### Requirements
 * Python 3.7
@@ -23,13 +23,24 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```sh
   python3 annotate_pathogenic_variants_annovar.py -a <annovar directory> -v avinput_output
 ```
-
 ### Outputs
 * output_annovar{sample_id}.exonic_variant_function, output_annovar{sample_id}.variant_function and output_annovar{sample_id}.log files will be created for each sample.
 
 ## Global pathway analysis
 ### Requirements
-* 
+* Python 3.7
+* Pandas: Installation instructions can be found here: https://pypi.org/project/pandas/
+* reactome2py: Installation instructions can be found here: https://github.com/reactome/reactome2py
+
+### Steps
+* Generate an input list of proteins (Gene Symbols). One Gene Symbol per line. An example input file was created: /global_pathway_analysis/pathway_analysis_input.txt
+* Run Reactome Global Pathway Analysis via Reactome content and analysis services API using your input set of proteins.
+```sh
+  python3 global_pathway_analysis.py -f pathway_analysis_input.txt
+```
+## Outputs
+* significant_pathways_pathway_analysis_input.txt file will be created. This file contains only the pathways with p-value < 0.05.
+
 ## Predicting variant pair frequencies
 ### Requirements
 * 
