@@ -33,7 +33,9 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
   python3 annotate_pathogenic_variants_annovar.py -a <annovar directory> -v avinput_output
 ```
 ### Outputs
-* output_annovar{sample_id}.exonic_variant_function, output_annovar{sample_id}.variant_function and output_annovar{sample_id}.log files will be created for each sample.
+* output_annovar{sample_id}.exonic_variant_function
+* output_annovar{sample_id}.variant_function
+* output_annovar{sample_id}.log
 
 ## Global pathway analysis
 ### Requirements
@@ -52,9 +54,9 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
   python3 global_pathway_analysis.py -f pathway_analysis_input.txt
 ```
 ### Outputs
-* /global_pathway_analysis/significant_pathways_pathway_analysis_input.txt file will be created. This file contains only the pathways with p-value < 0.05.
+* significant_pathways_pathway_analysis_input.txt
 
-## Predicting variant pair frequencies
+## Predicting variant pair frequencies for Non-Finnish European and African GNOMAD AFs
 ### Requirements
 * Python 3.7
 * Pandas: Installation instructions can be found here: https://pypi.org/project/pandas/
@@ -72,7 +74,7 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```
 
 ### Outputs
-* /statgen_utilities/predict_variant_pair_frequency/predicted_variant_pair_frequency_NOD2_chr16_clinvar_dbnsfp_gnomad_merged.tsv file will be created. This file contains the variant pair frequency for Non-Finish European (nfe) and African (afr) GNOMAD cohorts.
+* predicted_variant_pair_frequency_NOD2_chr16_clinvar_dbnsfp_gnomad_merged.tsv
 
 ## Genetic correlation analysis
 ### Requirements
