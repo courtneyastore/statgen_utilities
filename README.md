@@ -117,7 +117,7 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```sh
   source activate ldsc
 ```
-8. Install pre-computed LD-scores and SNP lists shown here: https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation
+8. Download pre-computed LD-scores and SNP lists shown here: https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation
 ```sh
   wget https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2
   tar -jxvf eur_w_ld_chr.tar.bz2
