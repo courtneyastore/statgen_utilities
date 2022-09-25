@@ -99,6 +99,20 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```sh
   python3 download_individual_gwas_sumstats_open_gwas.py -f open_gwas_file.tsv
 ```
-4. 
-
+4. Format the summary statistics for input into LDSC. This will create a new directory storing the formatted summary statistics: format_open_gwas_sumstats
+```sh
+  python3 format_opengwas_vcf.py -d new_open_gwas_sumstats
+```
+5. Create munge sumstats batch input file. This will create munge_input.lst file
+```sh
+  python3 create_mungesumstats_input_file.py -f open_gwas_file.tsv -d format_open_gwas_sumstats
+```
+6. Activate conda environment for LDSC.
+```sh
+  source activate ldsc
+```
+7. Run LDSC munge_sumstats function. 
+```sh
+  x
+```
 
