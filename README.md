@@ -79,7 +79,26 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 * Data acquisition 
 	* Python 3.7
 	* Pandas: Installation instructions can be found here: https://pypi.org/project/pandas/
+	* Wget: Installation instructions can be found here: https://pypi.org/project/wget/
+	* R 3.6
+	* TwoSampleMR: Installation instructions can be found here: https://mrcieu.github.io/TwoSampleMR/
 * Running genetic correlation
 	* Python 2
 	* LDSC tool: Installation instructions can be found here: https://github.com/bulik/ldsc
+
+### Steps
+1. Navigate to genetic_correlations directory
+```sh
+  cd genetic_correlations
+```
+2. Create Open GWAS available outcomes file (open_gwas_file.tsv).
+```sh
+  Rscript download_open_gwas_file.R
+```
+3. Extract the summary statistics from Open GWAS. Only Schizophrenia and Bipolar disorder GWAS summary statistics are extracted for example purposes. This will create a new directory storing the summary statistics: new_open_gwas_sumstats
+```sh
+  python3 download_individual_gwas_sumstats_open_gwas.py -f open_gwas_file.tsv
+```
+4. 
+
 
