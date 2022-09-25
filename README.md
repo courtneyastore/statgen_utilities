@@ -107,12 +107,44 @@ perl convert2annovar.pl -format vcf4 <multi-sample VCF> -allsample -outfile outp
 ```sh
   python3 create_mungesumstats_input_file.py -f open_gwas_file.tsv -d format_open_gwas_sumstats
 ```
-6. Activate conda environment for LDSC.
+6. Create genetic correlation batch input file. This will create genetic_correlation_input.lst file
+```sh
+  python3 get_pairs.py -f munge_input.lst
+```
+7. Activate conda environment for LDSC.
 ```sh
   source activate ldsc
 ```
-7. Run LDSC munge_sumstats function. 
+8. Install pre-computed LD-scores and SNP lists shown here: https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation
 ```sh
-  x
+  wget https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2
+  tar -jxvf eur_w_ld_chr.tar.bz2
+  mv eur_w_ld_chr ldsc/
+
+  wget https://data.broadinstitute.org/alkesgroup/LDSCORE/w_hm3.snplist.bz2
+  bunzip2 w_hm3.snplist.bz2
+  mv w_hm3.snplist ldsc/
 ```
+9. Run LDSC munge_sumstats function. This will create new directory storing the munged summary statistics: open_gwas_munged_sumstats
+```sh
+  cat munge_input.lst | cut -f1,2 | xargs -P 2 -n 2 bash -c './ldsc_munge_sumstats_batch.sh -l ldsc/ -g format_open_gwas_sumstats -p $0 -n $1'
+```
+10. Run LDSC to calculate genetic correlation between trait pairs in genetic_correlation_input.lst file. This will create a new directory storing the .log genetic correlations: genetic_correlation_pairwise
+```sh
+  cat genetic_correlation_input.lst | cut -f1,2 | xargs bash -c './ldsc_genetic_correlation_batch.sh -l ldsc/ -m open_gwas_munged_sumstats/ -p $0 -x $1'
+```
+11. Navigate to genetic_correlation_pairwise and explore trait correlations in the .log files. 
+```sh
+  cd genetic_correlation_pairwise
+  grep -A1 "p1" ieu-b-42_ieu-b-41.log
+```
+
+### Outputs
+* open_gwas_file.tsv
+* new_open_gwas_sumstats/
+* format_open_gwas_sumstats/
+* open_gwas_munged_sumstats/
+* genetic_correlation_pairwise/
+
+### It looks like we get an rg value of 0.7748 and a p close to 0, which is expected according to literature: https://www.sciencedirect.com/science/article/pii/S0140673609600726?via%3Dihub
 
